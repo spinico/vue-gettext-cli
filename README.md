@@ -77,4 +77,10 @@ Use an application like [Poedit](https://poedit.net/) to edit the gettext (.po) 
 #### 4. Convert
 
 Locate and parse the gettext translations (.po) files and compile each of the locales to JavaScript Notation Object (.json) format. The compile operation can generate a single .json file containing all locales or split each locale to its own .json file.
-   
+
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+---
