@@ -9,6 +9,7 @@ const fs = require('fs')
 
 const bin = path.resolve('./node_modules/.bin')
 
+const normal = chalk.cyan
 const error = chalk.bold.red
 const check = chalk.bold.green
 const highlight = chalk.underline.magentaBright
@@ -38,7 +39,7 @@ const argv = require('yargs')
         describe: "Path to source folder",
         type: 'string',
         nargs: 1,
-        default: path.resolve('./src')
+        default: './src'
       },
 
       destination: {
@@ -46,7 +47,7 @@ const argv = require('yargs')
         describe: "Path to translations output folder",
         type: 'string',
         nargs: 1,
-        default: path.resolve('./translations')
+        default: './translations'
       },
 
       locales: {
@@ -97,7 +98,7 @@ const argv = require('yargs')
         describe: "Path to portable object (.po) files folder",
         type: 'string',
         nargs: 1,
-        default: path.resolve('./translations/locales')
+        default: './translations/locales'
       },
 
       destination: {
@@ -105,7 +106,7 @@ const argv = require('yargs')
         describe: "Path to translations folder",
         type: 'string',
         nargs: 1,
-        default: path.resolve('./src/translations')
+        default: './src/translations'
       },
 
       locales: {
@@ -155,26 +156,26 @@ function extract(argv){
 
   const extract = path.join(bin, 'gettext-extract') 
 
-  const source = path.join(argv.source, '**','*.') 
-  const destination = argv.destination
+  const source = path.resolve(argv.source) 
+  const destination = path.resolve(argv.destination)
   const template = path.join(destination, argv.template) 
   const locales = path.join(destination, 'locales')
   
-  if (argv.verbose) console.log(chalk.cyan("Source path: " + source))
+  if (argv.verbose) console.log(normal("Source path: " + source))
 
   if (!fs.existsSync(destination)) {
     mkdirSync(destination)
   } 
 
-  if (argv.verbose) console.log(chalk.cyan("Destination path: " + destination))
+  if (argv.verbose) console.log(normal("Destination path: " + destination))
 
   if (!fs.existsSync(locales)) {
     mkdirSync(locales)    
   }
 
-  if (argv.verbose) console.log(chalk.cyan("Locales path: " + locales))
+  if (argv.verbose) console.log(normal("Locales path: " + locales))
 
-  glob(source + `{${argv.extensions.join(",")}}`, (e, files) => {
+  glob(path.join(source, '**','*.') + `{${argv.extensions.join(",")}}`, (e, files) => {
     if (e) {
       console.error(error(e))
       process.exit(-1)
@@ -238,18 +239,18 @@ function compile(argv){
 
   const compile = path.join(bin, 'gettext-compile')
 
-  const source = argv.source
-  const destination = argv.destination
+  const source = path.resolve(argv.source)
+  const destination = path.resolve(argv.destination)
   const locales = argv.locales
   const combined = argv.combined
 
-  if (argv.verbose) console.log(chalk.cyan("Source path: " + source))
+  if (argv.verbose) console.log(normal("Source path: " + source))
 
   if (!fs.existsSync(destination)) {
     mkdirSync(destination)
   } 
 
-  if (argv.verbose) console.log(chalk.cyan("Destination path: " + destination))
+  if (argv.verbose) console.log(normal("Destination path: " + destination))
 
   if (!combined) { // Generate separate translations (.json) files
 
