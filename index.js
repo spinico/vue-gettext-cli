@@ -7,7 +7,7 @@ const which = require('which')
 const path = require('path')
 const fs = require('fs')
 
-const bin = path.resolve('./node_modules/.bin') // getNpmBinFolder()
+const bin = path.resolve('./node_modules/.bin')
 
 const error = chalk.bold.red
 const check = chalk.bold.green
@@ -288,21 +288,4 @@ function compile(argv){
     })
       
   }
-}
-
-/**
- * Get the local node_modules' .bin folder using "npm bin" command
- * Fallback to path resolve if not found
- */
-function getNpmBinFolder(){
-    
-  const result = spawn.sync('npm', ['bin'], { stdio: 'pipe', encoding: 'utf-8' })
-  const folder = result.stdout.replace(/(\r\n|\n|\r)/gm, "") // Remove newline (if any)
-  
-  if (!fs.existsSync(folder)) {  
-    console.log(chalk.magenta("The local npm bin folder " + folder + " was not found, resolving from current path instead."))
-    return path.resolve('./node_modules/.bin')
-  }
-  
-  return folder
 }
