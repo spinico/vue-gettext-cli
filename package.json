@@ -1,0 +1,33 @@
+{
+  "name": "vue-gettext-cli",
+  "version": "1.0.1",
+  "description": "Vue.js web application localization workflow command-line interface tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "spinico",
+  "license": "MIT",
+  "keywords": [
+    "localization",
+    "gettext",
+    "vue.js",
+    "cli",
+    "command-line interface",
+    "translations"
+  ],
+  "bin": {
+    "vue-gettext-cli": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spinico/vue-gettext-cli.git"
+  },
+  "dependencies": {
+    "easygettext": "^2.7.0",
+    "yargs": "^13.2.0",
+    "chalk": "^2.4.2",
+    "cross-spawn": "^6.0.5",
+    "glob": "^7.1.3"
+  }
+}
