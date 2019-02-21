@@ -130,6 +130,9 @@ Then change to the newly created project directory.
 
 	npm install vue-gettext-cli --save-dev
 
+**Note**: remember to install [GNU gettext](https://www.gnu.org/software/gettext/) toolset and include the binaries path to your PATH environment variable. 
+
+
 #### 4. Edit the HelloWorld component as follow:
 
 `./src/components/HelloWorld.vue`
@@ -214,7 +217,7 @@ Then change to the newly created project directory.
 	./translations/locales/fr.po created.
 	./translations/locales/es.po created.
 
-Now you can edit each .po file using [Poedit](https://poedit.net/) and set the #HELLOWORLD# value for each locales..
+Now you can edit each .po file using [Poedit](https://poedit.net/) and set the #HELLOWORLD# value for each locales.
 
 #### 7. Convert the edited .po translations to .json files for each locales.
 
