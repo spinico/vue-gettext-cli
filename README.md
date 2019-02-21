@@ -8,13 +8,11 @@ This command-line utility uses the [easygettext](https://github.com/Polyconseil/
 
 ## Dependencies
 
-This package relies on the [GNU gettext toolset](https://www.gnu.org/software/gettext/). 
+This package relies on the [GNU gettext](https://www.gnu.org/software/gettext/) toolset (tested with version 0.19.8.1).
 
 Precompiled binaries for Windows can be found [here](https://mlocati.github.io/articles/gettext-iconv-windows.html).
 
-This utility has been developped using GNU gettext tools version 0.19.8.1.
-
-**Important**: Make sure to add the path to the toolset binaries to your PATH environment variable.   
+**Important**: Make sure to add the path to the gettext binaries (`msginit`, `msgmerge` and `msgattrib`) to your PATH environment variable.   
 
 ## Install
 
