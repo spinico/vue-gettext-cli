@@ -8,9 +8,7 @@ This command-line interface uses the [easygettext](https://github.com/Polyconsei
 
 ## Dependencies
 
-This package relies on the [GNU gettext](https://www.gnu.org/software/gettext/) toolset (tested with version 0.19.8.1).
-
-Precompiled binaries for Windows can be found [here](https://mlocati.github.io/articles/gettext-iconv-windows.html).
+This package relies on the [GNU gettext](https://www.gnu.org/software/gettext/) toolset (tested with version 0.19.8.1). Precompiled binaries for Windows can be found [here](https://mlocati.github.io/articles/gettext-iconv-windows.html).
 
 **Important**: Make sure to add the path to the gettext binaries (`msginit`, `msgmerge` and `msgattrib`) to your PATH environment variable.   
 
@@ -73,7 +71,7 @@ vue-gettext-cli **compile** [options]
 
 ## Workflow
 
-#### 1. Annotation
+#### 1. Annotate
 
 Edit the Vue.js templates files (.html, .vue, .jade, .js) and annotate each translatable string as required for your application localization using the [tokens](https://github.com/Polyconseil/easygettext#gettext-extract) supported by the `easygettext`'s extract tools.
 
@@ -135,7 +133,7 @@ Then change to the newly created project directory.
 
 #### 4. Edit the HelloWorld component as follow:
 
-`./src/components/HelloWorld.vue`
+**./src/components/HelloWorld.vue**
 
 	<template>
 	  <div class="hello">
@@ -194,7 +192,7 @@ Then change to the newly created project directory.
 
 #### 5. Edit the `package.json` to add tasks to run extract and compile translations to the `scripts` section for english, french and spanish locales.
 
-`package.json`
+**package.json**
 
 	{ ... 
 	  "scripts": {
@@ -230,7 +228,7 @@ Now you can edit each .po file using [Poedit](https://poedit.net/) and set the #
 
 #### 8. Update the project's `main.js` file to use the translations with the `vue-gettext` plugin.
 
-`main.js`
+**main.js**
 
 	import Vue from 'vue'		
 	import App from './App.vue'
@@ -281,14 +279,23 @@ Now you can edit each .po file using [Poedit](https://poedit.net/) and set the #
 
 	npm run serve
 
-Now access the local server url (usually `http://localhost:8080`).
+Now you can access the web application on the local server url (usually `http://localhost:8080`).
 
-By default, the english language is loaded and selected. If your current browser language is one of the declared locales, it should automatically be loaded and selected. 
+#### 10. Test localization
 
-The selection of another (not previously selected) language will trigger an import call to load the corresponding locale.       
+By default, the web application will initially import and select english language locale. If your current browser language is one of the declared locales, it should automatically be loaded and selected. 
 
-## License
+The selection of another (not previously selected) language will trigger an import call to load the corresponding locale.      
 
-[MIT](http://opensource.org/licenses/MIT)
+## [MIT](http://opensource.org/licenses/MIT) License
+
+
+Copyright 2019 spinico
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
