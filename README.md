@@ -1,6 +1,6 @@
 # vue-gettext-cli
 
-Localization workflow command-line interface for Vue.js web application.
+Localization workflow command-line interface for Vue.JS web application.
 
 This utility is based on the proposed workflow for the [vue-gettext](https://github.com/Polyconseil/vue-gettext) plugin package.
 
@@ -73,7 +73,7 @@ vue-gettext-cli **compile** [options]
 
 #### 1. Annotate
 
-Edit the Vue.js templates files (.html, .vue, .jade, .js) and annotate each translatable string as required for your application localization using the [tokens](https://github.com/Polyconseil/easygettext#gettext-extract) supported by the `easygettext`'s extract tools.
+Edit the Vue.JS templates files (.html, .vue, .jade, .js) and annotate each translatable string as required for your application localization using the [tokens](https://github.com/Polyconseil/easygettext#gettext-extract) supported by the `easygettext`'s extract tools.
 
 #### 2. Extract
 
@@ -97,7 +97,7 @@ The vue-gettext-cli `compile` command can be used to convert from the .po locale
 
 	vue-gettext-cli compile
 
-This command will look for *.po extension file(s) within the relative `./translations/locales` folder that matches the `en`(english) locale. It will then generate an `en.json` file in the `./src/translations` folder. The JSON format translations file can then be used with the [vue-gettext](https://github.com/Polyconseil/vue-gettext) plugin to localize your Vue.js web application. 
+This command will look for *.po extension file(s) within the relative `./translations/locales` folder that matches the `en`(english) locale. It will then generate an `en.json` file in the `./src/translations` folder. The JSON format translations file can then be used with the [vue-gettext](https://github.com/Polyconseil/vue-gettext) plugin to localize your Vue.JS web application. 
 
 For additional locales, the `--locales` option can be used to specify a list of space separated locales ids. For example to process locales for english (en), french (fr_FR) and spanish (es), you would call the compile command as follow:
 
@@ -108,9 +108,9 @@ For additional locales, the `--locales` option can be used to specify a list of 
 
 ## Exemple
 
-The following presents a step-by-step workflow configuration using a generic Vue.js project with [vue-gettext](https://github.com/Polyconseil/vue-gettext) for localization support.
+The following presents a step-by-step workflow configuration using a generic Vue.JS project with [vue-gettext](https://github.com/Polyconseil/vue-gettext) for localization support.
 
-#### 1. Create a new Vue.js project using [Vue CLI 3](https://cli.vuejs.org/).
+#### 1. Create a new Vue.JS project using [Vue CLI 3](https://cli.vuejs.org/).
 
 	vue create my-project
 
@@ -128,7 +128,7 @@ Then change to the newly created project directory.
 
 	npm install vue-gettext-cli --save-dev
 
-**Note**: remember to install [GNU gettext](https://www.gnu.org/software/gettext/) toolset and include the binaries path to your PATH environment variable. 
+**Note**: remember to install [GNU gettext](https://www.gnu.org/software/gettext/) toolset and include the binaries to your PATH environment variable. 
 
 
 #### 4. Edit the HelloWorld component as follow:
@@ -194,7 +194,8 @@ Then change to the newly created project directory.
 
 **package.json**
 
-	{ ... 
+	{ 
+	  ... 
 	  "scripts": {
 		...		
 		"localize-extract": "vue-gettext-cli extract --locales en fr es",
@@ -288,9 +289,6 @@ By default, the web application will initially import and select english languag
 The selection of another (not previously selected) language will trigger an import call to load the corresponding locale.      
 
 ## [MIT](http://opensource.org/licenses/MIT) License
-
-
-Copyright 2019 spinico
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
