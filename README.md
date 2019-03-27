@@ -216,7 +216,7 @@ Then change to the newly created project directory.
 	./translations/locales/fr.po created.
 	./translations/locales/es.po created.
 
-Now you can edit each .po file using [Poedit](https://poedit.net/) and set the #HELLOWORLD# value for each locales.
+Now you can edit each .po file using [Poedit](https://poedit.net/) and set the #WELCOME# value for each locales.
 
 #### 7. Convert the edited .po translations to .json files for each locales.
 
