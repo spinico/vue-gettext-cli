@@ -1,6 +1,6 @@
 {
   "name": "vue-gettext-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vue.js web application localization workflow command-line interface tool.",
   "main": "index.js",
   "scripts": {
