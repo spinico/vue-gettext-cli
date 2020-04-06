@@ -1,6 +1,6 @@
 {
   "name": "vue-gettext-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vue.js web application localization workflow command-line interface tool.",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,7 @@
     "glob": "^7.1.3"
   },
   "resolutions": {
-    "**/**/lodash": "^4.17.13"
+    "**/**/lodash": "^4.17.13",
+    "**/**/acorn": "^5.7.4"
   }
 }
