@@ -61,9 +61,25 @@ const argv = require('yargs')
         alias: 'e',
         describe: "Supported file extensions list",
         type: 'array',                
-        default: ['jade', 'html', 'js', 'vue']
+        default: ['jade', 'html', 'htm', 'js', 'pug', 'vue', 'ts']
       },      
 
+      startDelimiter: {
+        alias: 'sd',
+        describe: "Start delimiter",
+        type: 'string',
+        nargs: 1,
+        default: undefined
+      },
+      
+      endDelimiter: {
+        alias: 'ed',
+        describe: "End delimiter",
+        type: 'string',
+        nargs: 1,
+        default: undefined
+      },
+      
       template: {        
         alias: 'p',
         describe: "Name of the generated portable object template (.pot) file",
@@ -181,7 +197,7 @@ function extract(argv){
       process.exit(-1)
     }
 
-    const args = ['--attribute', 'v-translate', '--output', `${template}`].concat(files)
+    const args = ['--startDelimiter', argv.startDelimiter, '--endDelimiter', argv.endDelimiter, '--attribute', 'v-translate', '--output', `${template}`].concat(files)
     const result = spawn.sync(`${extract}`, args, { stdio: 'inherit' })
 
     if (result.error !== null) {

@@ -43,16 +43,17 @@ vue-gettext-cli **extract** [options]
 
 	Options:
 
-	--version          Display version number                [boolean]
-	--help, -h         Display command help                  [boolean]
-	--verbose, -v      Display more info during process      [boolean] [default: false]
-	--source, -s       Path to source folder                 [string]  [default: "./src"]
-	--destination, -d  Path to translations output folder    [string]  [default: "./translations"]
-	--locales, -l      Locales prefixes list                 [array]   [default: ["en"]]
-	--extensions, -e   Supported file extensions list        [array]   [default: ["jade","html","js","vue"]]
-	--template, -p     Name of the generated portable object [string]  [default: "template.pot"]
-	                   template (.pot) file
-
+	--version             Display version number                [boolean]
+	--help, -h            Display command help                  [boolean]
+	--verbose, -v         Display more info during process      [boolean] [default: false]
+	--source, -s          Path to source folder                 [string]  [default: "./src"]
+	--destination, -d     Path to translations output folder    [string]  [default: "./translations"]
+	--locales, -l         Locales prefixes list                 [array]   [default: ["en"]]
+	--extensions, -e      Supported file extensions list        [array]   [default: ["jade", "html", "htm", "js", "pug", "vue", "ts"]]
+	--startDelimiter, -sd Custom start delimiter                [string]  [default: "{{"] 
+	--endDelimiter, -ed   Custom end delimiter                  [string]  [default: "}}"]  
+	--template, -p        Name of the generated portable object [string]  [default: "template.pot"]
+	                      template (.pot) file
 
 ### Compile
 vue-gettext-cli **compile** [options]
